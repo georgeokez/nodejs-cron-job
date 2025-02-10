@@ -18,6 +18,20 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Check Secrets
+        run: |
+          if [[ -z "${{ secrets.USERNAME }}" ]]; then
+          echo "Secret USERNAME is missing!"
+          else
+          echo "Secret USERNAME is set (but hidden)!"
+          fi
+      - name: Check Secrets
+        run: |
+          if [[ -z "${{ secrets.PASSWORD }}" ]]; then
+          echo "Secret PASSWORD is missing!"
+          else
+          echo "Secret PASSWORD is set (but hidden)!"
+          fi
 
       - name: Run the Script
         run: node script.js
