@@ -19,8 +19,5 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Dependencies (if needed)
-        run: npm install # Skip this if your script doesn't need dependencies
-
       - name: Run the Script
         run: node script.js
