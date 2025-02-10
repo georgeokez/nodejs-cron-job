@@ -21,3 +21,6 @@ jobs:
 
       - name: Run the Script
         run: node script.js
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
